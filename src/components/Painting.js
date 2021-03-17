@@ -7,6 +7,7 @@ class Painting extends Component {
 
         return (
             <div>
+            
             </div>
         )
     }
