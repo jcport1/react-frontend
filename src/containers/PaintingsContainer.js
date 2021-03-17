@@ -13,9 +13,9 @@ class PaintingsContainer extends Component {
 
         fetch(`https://api.harvardartmuseums.org/object?classification=26&culture=${query}&apikey=1d2099ee-3f1e-46ff-bd4c-71d7ef213836`) 
         .then(resp => resp.json()) 
-        .then(({records}) => { 
+        .then(({records}) => {  
             this.setState({
-                paintings: records.map(painting => ({url: painting.primaryimageurl}))
+                paintings: records.map(painting => ({url: painting.primaryimageurl, title: painting.title, artist: painting.people[0].name}))
             })
             console.log(this.state)  
 
