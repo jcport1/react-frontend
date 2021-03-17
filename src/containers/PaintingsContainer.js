@@ -5,6 +5,7 @@ class PaintingsContainer extends Component {
 
 
     state = {
+
         paintings: []
     }
 
@@ -15,8 +16,10 @@ class PaintingsContainer extends Component {
         .then(resp => resp.json()) 
         .then(({records}) => { 
             this.setState({
-                paintings: records.map(painting => ({url: painting.url}))
+                paintings: records.map(painting => ({url: painting.primaryimageurl}))
             })
+            console.log(this.state)  
+
         })
     }
 
@@ -25,15 +28,14 @@ class PaintingsContainer extends Component {
     render(){
         return (
             <div>
-            <Paintings paintings={this.state.paintings}/>
+            <Paintings paintings={this.state.paintings} />
             </div>
         )
     }
 
     componentDidMount(){
 
-        this.fetchPaintings()
-        
+       this.fetchPaintings()
     }
 
 }
