@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
+import {connect} from 'react-redux'
 
 class PaintingsContainer extends Component {
 
@@ -39,4 +40,16 @@ class PaintingsContainer extends Component {
 
 }
 
-export default PaintingsContainer
+const mapStateToProps = (state) => {
+
+    return {
+        paintings: state.paintings 
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+    return {setPainting: (newPainting)=> dispatch(setPainting(newPainting))}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PaintingsContainer)
