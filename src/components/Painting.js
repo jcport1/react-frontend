@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Painting extends Component {
+const Painting = (props) => {
+     
+    return ( 
+        <div>
+        <h1>Title</h1>
+        <img key={props.painting.url} src={props.painting.url} alt="painting" width="300"/>
+        </div>
+    )
 
-    render(){
 
-        return (
-            <div>
-            
-            </div>
-        )
-    }
 }
 
 export default Painting  

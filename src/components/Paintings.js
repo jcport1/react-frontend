@@ -1,11 +1,14 @@
 import React from 'react';
+import Painting from './Painting'
 
 
 const Paintings = (props) => { 
 
+    const paintings = props.paintings.map((painting) => <Painting painting={painting}/>)
+
    return (
        <div>
-       {props.paintings.map(painting => <img key={painting.url} src={painting.url} alt="painting"/>)}
+       {paintings}
        </div>
    )
 }
