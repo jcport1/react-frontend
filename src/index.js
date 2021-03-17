@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
 import managePainting from './reducers/managePainting';
+import thunk from 'redux-thunk'
+
 
 const store = createStore(managePainting, applyMiddleware(thunk))
 

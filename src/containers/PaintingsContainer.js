@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
 import {connect} from 'react-redux'
+import { fetchPaintings } from '../actions/paintingActions'
 
 class PaintingsContainer extends Component {
 
 
-    state = {
+    // state = {
 
-        paintings: []
-    }
+    //     paintings: []
+    // }
 
-    fetchPaintings = (query = "Dutch") => {
+    // fetchPaintings = (query = "Dutch") => {
 
-        fetch(`https://api.harvardartmuseums.org/object?classification=26&culture=${query}&apikey=1d2099ee-3f1e-46ff-bd4c-71d7ef213836`) 
-        .then(resp => resp.json()) 
-        .then(({records}) => {  
-            this.setState({
-                paintings: records.map(painting => ({url: painting.primaryimageurl, title: painting.title, artist: painting.people[0].name}))
-            })
-            console.log(this.state)  
+    //     fetch(`https://api.harvardartmuseums.org/object?classification=26&culture=${query}&apikey=1d2099ee-3f1e-46ff-bd4c-71d7ef213836`) 
+    //     .then(resp => resp.json()) 
+    //     .then(({records}) => {  
+    //         this.setState({
+    //             paintings: records.map(painting => ({url: painting.primaryimageurl, title: painting.title, artist: painting.people[0].name}))
+    //         })
+    //         console.log(this.state)  
 
-        })
-    }
-
-
+    //     })
+    // }
 
     render(){
         return (
@@ -34,8 +33,7 @@ class PaintingsContainer extends Component {
     }
 
     componentDidMount(){
-
-       this.fetchPaintings()
+       this.props.fetchPaintings()
     }
 
 }
@@ -49,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 
-    return {setPainting: (newPainting)=> dispatch(setPainting(newPainting))}
+    return { fetchPaintings: (query = "Dutch") => dispatch(fetchPaintings(query))}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PaintingsContainer)
