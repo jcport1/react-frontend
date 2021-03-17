@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import PaintingsContainer from '../PaintingsContainer'
+import PaintingsContainer from './containers/PaintingsContainer'
 
 function App() {
   return (
