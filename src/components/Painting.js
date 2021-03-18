@@ -1,8 +1,7 @@
 import React from 'react';
 
-
 const Painting = (props) => { 
-    
+
     console.log(props) 
     return (  
         <div>
@@ -11,7 +10,6 @@ const Painting = (props) => {
         <h4>{props.painting.people[0].name}</h4>
         </div>
     )
-
 
 }
 

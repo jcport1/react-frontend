@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return {  
-        fetchPaintings: () => dispatch(fetchPaintings())}
+        fetchPaintings: (query = "French") => dispatch(fetchPaintings(query))}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PaintingsContainer)
