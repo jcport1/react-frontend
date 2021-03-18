@@ -1,18 +1,25 @@
-export default function managePainting(state = {
-    paintings: [], loading: false
-}, action) {
+const managePainting = ( state = {
+    paintings: [], loading: false }, action) => {
 
     switch(action.type){
 
-        case "GOT_PAINTINGS":
-
-            return {...state, paintings:action.payload, loading: false}
-
-        case "LOADING":
+        case "START_ADDING_PAINTINGS_REQUEST":
              
-            return {...state, loading: true}
+            return {
+                ...state,
+                paintings: [...state.paintings],
+                loading: true}
+
+        case "GOT_PAINTINGS":
+         
+            return {
+                ...state, 
+                paintings: action.payload, 
+                loading: false}
 
         default:
             return state;
     }
 }
+
+export default managePainting

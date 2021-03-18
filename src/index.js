@@ -8,7 +8,6 @@ import { createStore, applyMiddleware } from 'redux'
 import managePainting from './reducers/managePainting';
 import thunk from 'redux-thunk'
 
-
 const store = createStore(managePainting, applyMiddleware(thunk))
 
 ReactDOM.render(

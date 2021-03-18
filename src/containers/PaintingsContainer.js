@@ -24,30 +24,33 @@ class PaintingsContainer extends Component {
     //     })
     // }
 
-    render(){
+    render() {
         return (
-            <div>
-            <Paintings paintings={this.state.paintings} />
+
+            <div> 
+            <Paintings paintings={this.props.paintings} />
             </div>
         )
     }
 
     componentDidMount(){
-       this.props.fetchPaintings()
+       this.props.fetchPaintings() 
     }
 
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => {  
 
     return {
-        paintings: state.paintings 
+        paintings: state.paintings, 
+        loading: state.loading 
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
 
-    return { fetchPaintings: (query = "Dutch") => dispatch(fetchPaintings(query))}
+    return {  
+        fetchPaintings: () => dispatch(fetchPaintings())}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(PaintingsContainer)
