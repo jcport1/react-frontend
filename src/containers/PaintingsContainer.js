@@ -23,7 +23,7 @@ class PaintingsContainer extends Component {
 
     //     })
     // }
-
+    
     render() {
         return (
 

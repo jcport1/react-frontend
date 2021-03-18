@@ -1,19 +1,34 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import { fetchPaintings } from '../actions/paintingActions'
 
 class SearchBar extends Component {
 
-    // state = {
+    state = {
 
-    //     query: ""
-    // }
+        query: ""
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.fetchPaintings(this.state.query)
+         
+    }
+
+    handleOnChange = (event) => {
+
+        this.setState({
+            query: event.target.value 
+        })
+
+    }
 
     render(){
         return (
-
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Enter Culture: </label>
-                    <input type="text"/>
+                    <input type="text" onChange={this.handleOnChange} value={this.state.query}/>
                     <input type="submit"/>
                 </form>
             </div>
@@ -21,4 +36,11 @@ class SearchBar extends Component {
     }
 }
 
-export default SearchBar
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        fetchPaintings: (query) => dispatch(fetchPaintings(query))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar)
