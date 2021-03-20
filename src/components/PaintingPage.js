@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setSelectedPainting } from '../actions/paintingActions'
+import { Link } from 'react-router-dom'
 
 
 class PaintingPage extends Component {
@@ -22,7 +23,7 @@ class PaintingPage extends Component {
                 <h3>Physical Description</h3>
                 <h4>Medium: {this.props.painting.medium}</h4>
                 <h4>Dimensions: {this.props.painting.dimensions}</h4>
-
+                <button onClick={this.props.history.goBack}>Go Back</button>
             </div>
         )
     }

@@ -22,12 +22,12 @@ class SearchBar extends Component {
         })
 
     }
-
+    
     render(){
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Enter Culture: </label>
+                    <label>Search: </label>
                     <input type="text" onChange={this.handleOnChange} value={this.state.query}/>
                     <input type="submit"/>
                 </form>
