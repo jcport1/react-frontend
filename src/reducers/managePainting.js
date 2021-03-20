@@ -1,17 +1,27 @@
+// const nullPainting = {
+//  id: null,
+//  title: "",
+//  image: "",
+//  artist: "",
+//  century: "",
+//  culture: "",
+//  medium: "",
+//  dimensions: ""
+// }
 const managePainting = ( state = {
-    paintings: [], selectedPainting: [], loading: false }, action) => {
+    paintings: [], 
+    selectedPainting: [],
+    loading: false }, action) => {
 
     switch(action.type){
-
-        case "START_ADDING_PAINTINGS_REQUEST":
-             
+         
+        case "START_ADDING_PAINTINGS_REQUEST": 
             return {
                 ...state,
                 paintings: [...state.paintings],
                 loading: true}
 
         case "GOT_PAINTINGS":
-         
             return {
                 ...state, 
                 paintings: action.payload, 
