@@ -1,5 +1,5 @@
 const managePainting = ( state = {
-    paintings: [], loading: false }, action) => {
+    paintings: [], selectedPainting: [], loading: false }, action) => {
 
     switch(action.type){
 
@@ -16,6 +16,13 @@ const managePainting = ( state = {
                 ...state, 
                 paintings: action.payload, 
                 loading: false}
+        
+        case "SET_SELECTED_PAINTING":
+
+            return {
+                ...state, 
+                selectedPainting: action.payload
+            }
 
         default:
             return state;

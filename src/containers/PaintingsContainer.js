@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
+import PaintingPage from '../components/PaintingPage'
 import {connect} from 'react-redux'
 import { fetchPaintings } from '../actions/paintingActions'
+import { Switch, Route } from 'react-router-dom'
 
 class PaintingsContainer extends Component {
 
@@ -28,7 +30,10 @@ class PaintingsContainer extends Component {
         return (
 
             <div> 
-            <Paintings paintings={this.props.paintings} />
+            <Switch>
+                <Route path="/paintings/:id" component={PaintingPage} />
+                <Route path="/paintings" component={Paintings} />
+            </Switch>
             </div>
         )
     }
