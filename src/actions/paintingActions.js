@@ -1,3 +1,4 @@
+const url = "http://localhost:3000/paintings"
 
 export const setPaintings = (paintings) => (
     {type: "GOT_PAINTINGS", payload: paintings})
@@ -7,10 +8,10 @@ export const fetchPaintings = (query) => {
     return (dispatch) => {
 
         dispatch({type: "START_ADDING_PAINTINGS_REQUEST"})
-        fetch(`https://api.harvardartmuseums.org/object?classification=26&culture=${query}&apikey=1d2099ee-3f1e-46ff-bd4c-71d7ef213836`)
+        fetch(url)
         .then(res => res.json())
         .then(json => {   
-            dispatch(setPaintings(json.records))
+            dispatch(setPaintings(json))
         })
     } 
 }
