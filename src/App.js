@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 import PaintingPage from './components/PaintingPage';
 import PaintingsContainer from './containers/PaintingsContainer';
+import FavoritesContainer from './containers/FavoritesContainer';
 // import SearchBar from './components/SearchBar';
 import Home from './components/Home'
 import { connect } from 'react-redux';
@@ -22,6 +23,7 @@ class App extends Component {
         <Switch>
           <Route path="/paintings/:id" component={PaintingPage}/>
           <Route path="/paintings" component={PaintingsContainer} />
+          <Route path="/favorites" component={FavoritesContainer}/>
           <Route path="/" component={Home}/>
         </Switch>
       </div>
