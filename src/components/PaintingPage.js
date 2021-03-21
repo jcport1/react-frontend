@@ -15,7 +15,6 @@ class PaintingPage extends Component {
 
         return ( 
 
-
             <div> 
                 <h2>{this.props.painting.title}</h2>
                 <img key={this.props.painting.primaryimageurl} src={this.props.painting.primaryimageurl} alt="painting" width="300"/>

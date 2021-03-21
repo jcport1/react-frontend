@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
 import { connect } from 'react-redux'
-import { fetchPaintings } from '../actions/paintingActions'
+// import { fetchPaintings } from '../actions/paintingActions'
 
 class PaintingsContainer extends Component {
 
-    componentDidMount(){ 
-        this.props.fetchPaintings() 
-     }
+    // componentDidMount(){ 
+    //     this.props.fetchPaintings() 
+    //  }
 
     render() { 
         return (
@@ -26,10 +26,10 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
+// const mapDispatchToProps = (dispatch) => {
 
-    return {  
-        fetchPaintings: () => dispatch(fetchPaintings())}
-}
+//     return {  
+//         fetchPaintings: () => dispatch(fetchPaintings())}
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PaintingsContainer)
+export default connect(mapStateToProps)(PaintingsContainer)
