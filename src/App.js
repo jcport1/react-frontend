@@ -3,15 +3,15 @@ import React, { Component } from 'react'
 import PaintingPage from './components/PaintingPage';
 import PaintingsContainer from './containers/PaintingsContainer';
 import SearchBar from './components/SearchBar';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { fetchPaintings } from './actions/paintingActions'
+// import { fetchPaintings } from './actions/paintingActions'
 
 class App extends Component {
 
-  componentDidMount(){ 
-    this.props.fetchPaintings() 
-  } 
+  // componentDidMount(){ 
+  //   this.props.fetchPaintings() 
+  // } 
 
   render() {
       console.log(this.state)
@@ -28,10 +28,10 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
+// const mapDispatchToProps = (dispatch) => {
 
-  return {  
-      fetchPaintings: () => dispatch(fetchPaintings())}
-}
+//   return {  
+//       fetchPaintings: () => dispatch(fetchPaintings())}
+// }
 
-export default connect(null, mapDispatchToProps)(App);
+export default App;

@@ -1,23 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setSelectedPainting } from '../actions/paintingActions'
-import { Link } from 'react-router-dom'
 
 
 class PaintingPage extends Component {
 
      componentDidMount(){
          console.log("I'm in the painting page")
-         const id = this.props.match.params.id
+         const id = this.props.match.params.id 
          this.props.setSelectedPainting(id)
      }
 
-    render(){
-        return (
-            <div>
+    render(){ 
+
+
+        return ( 
+
+
+            <div> 
                 <h2>{this.props.painting.title}</h2>
-                <img key={this.props.painting.image} src={this.props.painting.image} alt="painting" width="300"/>
-                <h4>Artist: {this.props.painting.artist}</h4>
+                <img key={this.props.painting.primaryimageurl} src={this.props.painting.primaryimageurl} alt="painting" width="300"/>
+                <h4>Artist: {this.props.painting.people? this.props.painting.people[0].name : null}</h4>
                 <h4>Century: {this.props.painting.century}</h4>
                 <h4>Culture: {this.props.painting.culture}</h4>
                 <h3>Physical Description</h3>
@@ -30,7 +33,7 @@ class PaintingPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-
+ 
     return {
         painting: state.selectedPainting
     }

@@ -27,8 +27,14 @@ const managePainting = ( state = {
                 paintings: action.payload, 
                 loading: false}
         
+        case "SET_SEARCHED_PAINTINGS":   
+            return {
+                ...state,
+                paintings: action.payload
+            }
+        
         case "SET_SELECTED_PAINTING":
-
+             
             return {
                 ...state, 
                 selectedPainting: action.payload

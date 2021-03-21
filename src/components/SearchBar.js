@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { fetchPaintings } from '../actions/paintingActions'
+import { searchedPaintings } from '../actions/paintingActions'
 
 class SearchBar extends Component {
 
     state = {
-
         query: ""
     }
 
     handleSubmit = (event) => {
+
         event.preventDefault()
-        this.props.fetchPaintings(this.state.query)
+        this.props.searchedPaintings(this.state.query)
+        this.setState({
+            query: ""
+        })
          
     }
 
@@ -39,7 +42,7 @@ class SearchBar extends Component {
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        fetchPaintings: (query) => dispatch(fetchPaintings(query))
+        searchedPaintings: (query) => dispatch(searchedPaintings(query))
     }
 }
 
