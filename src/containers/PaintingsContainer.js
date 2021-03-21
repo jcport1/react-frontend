@@ -15,11 +15,11 @@ class PaintingsContainer extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => { 
 
     return {
-        paintings: state.paintings, 
-        loading: state.loading 
+        paintings: state.paintings.paintings, 
+        loading: state.paintings.loading
     }
 }
 

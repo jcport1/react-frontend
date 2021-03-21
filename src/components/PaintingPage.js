@@ -5,7 +5,8 @@ import { setSelectedPainting, unsetPainting, addFavorite } from '../actions/pain
 class PaintingPage extends Component {
 
      componentDidMount(){
-         console.log("I'm in the painting page")
+          
+         console.log("I'm in the painting page") 
          const id = this.props.match.params.id 
          this.props.setSelectedPainting(id)
      }
@@ -16,6 +17,7 @@ class PaintingPage extends Component {
 
 
     render(){ 
+
 
         return ( 
 
@@ -38,7 +40,7 @@ class PaintingPage extends Component {
 const mapStateToProps = (state) => {
  
     return {
-        painting: state.selectedPainting
+        painting: state.paintings.selectedPainting
     }
 
 }

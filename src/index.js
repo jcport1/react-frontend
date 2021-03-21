@@ -7,10 +7,11 @@ import {Provider} from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import managePainting from './reducers/managePainting';
+// import managePainting from './reducers/managePainting';
+import { reducer } from './reducers/reducer'
 import thunk from 'redux-thunk'
 
-const store = createStore(managePainting, composeWithDevTools(applyMiddleware(thunk)))
+const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)))
  
 ReactDOM.render(
   <React.StrictMode>
