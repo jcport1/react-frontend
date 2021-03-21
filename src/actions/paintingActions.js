@@ -58,4 +58,6 @@ export const setSelectedPainting = (id) => {
     }
 }
 
+export const addFavorite = () => ({type:"ADD_FAVORITE"})
+
 export const unsetPainting = () => ({type:"UNSET_PAINTING"})
