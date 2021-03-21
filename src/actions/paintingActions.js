@@ -57,3 +57,5 @@ export const setSelectedPainting = (id) => {
         })
     }
 }
+
+export const unsetPainting = () => ({type:"UNSET_PAINTING"})

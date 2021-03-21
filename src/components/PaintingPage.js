@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setSelectedPainting } from '../actions/paintingActions'
+import { setSelectedPainting, unsetPainting } from '../actions/paintingActions'
 
 class PaintingPage extends Component {
 
@@ -9,6 +9,12 @@ class PaintingPage extends Component {
          const id = this.props.match.params.id 
          this.props.setSelectedPainting(id)
      }
+
+     componentWillUnmount(){
+         this.props.unsetPainting()
+     }
+
+     
 
     render(){ 
 
@@ -42,7 +48,8 @@ const mapDispatchToProps = (dispatch) => {
 
     return {
 
-        setSelectedPainting: (id) => dispatch(setSelectedPainting(id))
+        setSelectedPainting: (id) => dispatch(setSelectedPainting(id)),
+        unsetPainting: () => dispatch(unsetPainting())
 
     }
 }

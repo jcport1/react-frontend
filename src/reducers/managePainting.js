@@ -30,6 +30,13 @@ const managePainting = ( state = {
                 ...state, 
                 selectedPainting: action.payload
             }
+        
+        case "UNSET_PAINTING":
+
+            return {
+                ...state,
+                selectedPainting: [] 
+            }
 
         default:
             return state;
