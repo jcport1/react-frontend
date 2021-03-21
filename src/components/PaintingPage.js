@@ -31,6 +31,7 @@ class PaintingPage extends Component {
                 <h4>Medium: {this.props.painting.medium}</h4>
                 <h4>Dimensions: {this.props.painting.dimensions}</h4>
                 <button onClick={this.props.history.goBack}>Go Back</button>
+                <p><button onClick={() => alert("I was clicked")}>Add to Favorites</button></p>
             </div>
         )
     }
