@@ -1,22 +1,25 @@
-const url = "http://localhost:3000/paintings/"
+const url = "http://localhost:3000/paintings_index/"
 
-export const setPaintings = (paintings) => (
-    {type: "GOT_PAINTINGS", payload: paintings})
+// export const setPaintings = (paintings) => (
+//     {type: "GOT_PAINTINGS", payload: paintings})
 
 export const fetchPaintings = () => { 
     return (dispatch) => {
         dispatch({type: "START_ADDING_PAINTINGS_REQUEST"})
         fetch(url)
         .then(res => res.json())
-        .then(json => {   
-            dispatch(setPaintings(json))
+        .then(paintings => {  
+            dispatch({
+                type: "GOT_PAINTINGS",
+                payload: paintings["records"]
+            })
+             
         })
     } 
 }
 
 export const searchedPaintings = (query) => { 
     return (dispatch) => {
-        dispatch({type: "START_ADDING_PAINTINGS_REQUEST"})
         const configObj = {
             method: "POST",
             headers: {
@@ -33,7 +36,7 @@ export const searchedPaintings = (query) => {
 
             dispatch({
                 type: "SET_SEARCHED_PAINTINGS",
-                payload: searchResults.map(painting => ({id: painting.id, title: painting.title, image: painting.primaryimageurl, artist: painting.people[0].name, century: painting.century, culture: painting.culture, medium: painting.medium, dimensions: painting.dimensions}))
+                payload: searchResults.map(painting => ({id: painting.id, title: painting.title, primaryimageurl: painting.primaryimageurl, century: painting.century, culture: painting.culture, medium: painting.medium, dimensions: painting.dimensions}))
             }) 
          
         })
