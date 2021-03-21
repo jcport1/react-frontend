@@ -1,13 +1,4 @@
-// const nullPainting = {
-//  id: null,
-//  title: "",
-//  image: "",
-//  artist: "",
-//  century: "",
-//  culture: "",
-//  medium: "",
-//  dimensions: ""
-// }
+
 const managePainting = ( state = {
     paintings: [], 
     selectedPainting: [],

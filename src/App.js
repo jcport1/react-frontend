@@ -2,7 +2,8 @@ import './App.css';
 import React, { Component } from 'react'
 import PaintingPage from './components/PaintingPage';
 import PaintingsContainer from './containers/PaintingsContainer';
-import SearchBar from './components/SearchBar';
+// import SearchBar from './components/SearchBar';
+import Home from './components/Home'
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { fetchPaintings } from './actions/paintingActions'
@@ -18,10 +19,10 @@ class App extends Component {
       return (
         <div className="App">
         <h1>Art Explorer</h1>
-        <SearchBar />
         <Switch>
           <Route path="/paintings/:id" component={PaintingPage}/>
           <Route path="/paintings" component={PaintingsContainer} />
+          <Route path="/" component={Home}/>
         </Switch>
       </div>
     );

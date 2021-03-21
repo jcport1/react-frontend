@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
+import SearchBar from '../components/SearchBar'
 import { connect } from 'react-redux'
-// import { fetchPaintings } from '../actions/paintingActions'
 
 class PaintingsContainer extends Component {
-
-    // componentDidMount(){ 
-    //     this.props.fetchPaintings() 
-    //  }
 
     render() { 
         return (
             <div> 
+                <SearchBar />
                 <Paintings paintings={this.props.paintings}/>
             </div>
         )
@@ -25,11 +22,5 @@ const mapStateToProps = (state) => {
         loading: state.loading 
     }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-
-//     return {  
-//         fetchPaintings: () => dispatch(fetchPaintings())}
-// }
 
 export default connect(mapStateToProps)(PaintingsContainer)
