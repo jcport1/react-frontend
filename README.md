@@ -1,5 +1,5 @@
 # README
-Rails API backend is located here: https://github.com/jcport1/react-backend.
+Rails API backend can be found here: https://github.com/jcport1/react-backend.
 
 # Getting Started with Create React App
 
