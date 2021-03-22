@@ -1,3 +1,4 @@
+
 const manageFavorite = ( state = {
     favorites: []
 
@@ -16,6 +17,14 @@ const manageFavorite = ( state = {
         return {
             ...state, 
             favorites: [...state.favorites, action.payload]  
+        }
+
+        case "REMOVE_FAVORITE":
+
+            const favorites = state.favorites.filter(favorite => favorite.id !== action.id)
+
+        return {
+            ...state, favorites 
         }
 
         default:

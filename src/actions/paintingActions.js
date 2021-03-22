@@ -97,6 +97,23 @@ export const fetchFavorites = () => {
     }
 }
 
+export const removeFavorite = (id) => { 
+    return (dispatch) => {
+        const configObj = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            }
+        }
+        fetch(`http://localhost:3000/paintings/${id}`, configObj)
+        .then(res => res.json())
+            dispatch({
+                type: "REMOVE_FAVORITE", id
+            }) 
+    }
+}
+
  
 
     

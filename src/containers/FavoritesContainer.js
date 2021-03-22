@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Favorites from '../components/Favorites'
 import { connect } from 'react-redux'
-import { fetchFavorites } from '../actions/paintingActions'
+import { fetchFavorites, removeFavorite } from '../actions/paintingActions'
 
 
 class FavoritesContainer extends Component {
@@ -15,7 +15,7 @@ class FavoritesContainer extends Component {
             <div>
                 <h1>Favorites</h1>
                 <button onClick={this.props.history.goBack}>Go Back</button>
-                <Favorites favorites={this.props.favorites}/>
+                <Favorites favorites={this.props.favorites} />
             </div>
         )
     }
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchFavorites })(FavoritesContainer); 
+export default connect(mapStateToProps, { fetchFavorites, removeFavorite })(FavoritesContainer); 
