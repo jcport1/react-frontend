@@ -8,6 +8,7 @@ import Home from './components/Home'
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { fetchPaintings } from './actions/paintingActions'
+import NavBar from "./components/NavBar"
 
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
       console.log(this.state)
       return (
         <div className="App">
+        <NavBar />
         <h1 className="display-3">Art Explorer</h1><br></br>
         <Switch>
           <Route path="/paintings/:id" component={PaintingPage}/>

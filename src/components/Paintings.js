@@ -7,9 +7,11 @@ const Paintings = (props) => {
     const paintings = props.paintings.map((painting) => <Painting key={painting.id} painting={painting}/>)
 
    return (
-       <div className="container" align="center">
-        {paintings}
-       </div>
+
+            <div className="row">
+              {paintings}
+            </div>
+       
    )
 }
 

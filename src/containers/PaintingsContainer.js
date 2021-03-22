@@ -2,16 +2,14 @@ import React, { Component } from 'react';
 import Paintings from '../components/Paintings'
 import SearchBar from '../components/SearchBar'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
 
 class PaintingsContainer extends Component {
 
     render() { 
         return (
-            <div className="container">
-                <p><Link to="/favorites"><button>My Favorites</button></Link></p>
-                <SearchBar />
-                <Paintings paintings={this.props.paintings}/>
+            <div>
+                    <SearchBar />
+                    <Paintings paintings={this.props.paintings}/>
             </div>
         )
     }
