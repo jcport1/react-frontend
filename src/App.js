@@ -20,7 +20,7 @@ class App extends Component {
       console.log(this.state)
       return (
         <div className="App">
-        <h1>Art Explorer</h1>
+        <h1 className="display-3">Art Explorer</h1><br></br>
         <Switch>
           <Route path="/paintings/:id" component={PaintingPage}/>
           <Route path="/paintings" component={PaintingsContainer} />

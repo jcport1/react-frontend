@@ -8,7 +8,7 @@ class PaintingsContainer extends Component {
 
     render() { 
         return (
-            <div>
+            <div className="container">
                 <p><Link to="/favorites"><button>My Favorites</button></Link></p>
                 <SearchBar />
                 <Paintings paintings={this.props.paintings}/>
