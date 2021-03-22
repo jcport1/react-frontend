@@ -58,6 +58,46 @@ export const setSelectedPainting = (id) => {
     }
 }
 
-export const addFavorite = () => ({type:"ADD_FAVORITE"})
-
 export const unsetPainting = () => ({type:"UNSET_PAINTING"})
+
+export const addFavorite = (painting) => {
+
+    return (dispatch) => {
+        const configObj = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                painting: painting 
+            })
+        }
+        fetch("http://localhost:3000/painting", configObj)
+        .then(res => res.json())
+        .then(savedPainting => {
+
+            dispatch({
+                type:"ADD_FAVORITE", payload: savedPainting
+            })
+        })
+    }
+}
+
+export const fetchFavorites = () => { 
+    return (dispatch) => {
+        fetch("http://localhost:3000/paintings")
+        .then(res => res.json())
+        .then(favorites => {  
+            dispatch({
+                type: "GOT_FAVORITES",
+                payload: favorites 
+            }) 
+        })
+    }
+}
+
+ 
+
+    
+

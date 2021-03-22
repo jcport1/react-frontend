@@ -18,7 +18,6 @@ class PaintingPage extends Component {
 
     render(){ 
 
-
         return ( 
 
             <div> 
@@ -31,7 +30,7 @@ class PaintingPage extends Component {
                 <h4>Medium: {this.props.painting.medium}</h4>
                 <h4>Dimensions: {this.props.painting.dimensions}</h4>
                 <button onClick={this.props.history.goBack}>Go Back</button>
-                <p><button onClick={() => alert("I was clicked")}>Add to Favorites</button></p>
+                <p><button onClick={() => this.props.addFavorite(this.props.painting)}>Add to Favorites</button></p>
             </div>
         )
     }
@@ -51,8 +50,7 @@ const mapDispatchToProps = (dispatch) => {
 
         setSelectedPainting: (id) => dispatch(setSelectedPainting(id)),
         unsetPainting: () => dispatch(unsetPainting()),
-        addFavorite: () => dispatch(addFavorite())
-
+        addFavorite: (painting) => dispatch(addFavorite(painting)),
     }
 }
 

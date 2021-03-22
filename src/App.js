@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { fetchPaintings } from './actions/paintingActions'
 
+
 class App extends Component {
 
   componentDidMount(){ 
