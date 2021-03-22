@@ -5,10 +5,9 @@ import { setSelectedPainting, unsetPainting, addFavorite } from '../actions/pain
 class PaintingPage extends Component {
 
      componentDidMount(){
-          
-         console.log("I'm in the painting page") 
-         const id = this.props.match.params.id 
-         this.props.setSelectedPainting(id)
+
+        const id = this.props.match.params.id 
+        this.props.setSelectedPainting(id)
      }
 
      componentWillUnmount(){

@@ -11,11 +11,12 @@ class FavoritesContainer extends Component {
     }
 
     render(){  
+ 
         return (
             <div>
                 <h1>Favorites</h1>
                 <button onClick={this.props.history.goBack}>Go Back</button>
-                <Favorites favorites={this.props.favorites} />
+                <Favorites favorites={this.props.favorites} removeFavorite={this.props.removeFavorite} />
             </div>
         )
     }
@@ -29,4 +30,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { fetchFavorites, removeFavorite })(FavoritesContainer); 
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        fetchFavorites: () => dispatch(fetchFavorites()),
+        removeFavorite: (id) => dispatch(removeFavorite(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FavoritesContainer); 

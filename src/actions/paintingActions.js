@@ -76,7 +76,6 @@ export const addFavorite = (painting) => {
         fetch("http://localhost:3000/painting", configObj)
         .then(res => res.json())
         .then(savedPainting => {
-
             dispatch({
                 type:"ADD_FAVORITE", payload: savedPainting
             })
