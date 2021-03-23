@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import PaintingPage from './components/PaintingPage';
 import PaintingsContainer from './containers/PaintingsContainer';
 import FavoritesContainer from './containers/FavoritesContainer';
-// import SearchBar from './components/SearchBar';
 import Home from './components/Home'
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';

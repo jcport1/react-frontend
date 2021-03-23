@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 class PaintingsContainer extends Component {
 
-    // isInFavorites(){
+        // isInFavorites(){
 
     //     return !!this.props.favorites.find(painting => painting.id === this.props.favorite.id)
 
