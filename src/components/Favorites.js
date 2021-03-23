@@ -8,9 +8,11 @@ const Favorites = (props) => {
  
     return ( 
         
-        <div>
-            {favorites}
-        </div>
+                <div className="row">
+                    {favorites}
+                 </div>
+            
+           
     )
 }
 

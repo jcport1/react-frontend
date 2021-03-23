@@ -14,8 +14,7 @@ class FavoritesContainer extends Component {
  
         return (
             <div>
-                <h1>Favorites</h1>
-                <button onClick={this.props.history.goBack}>Go Back</button>
+                <h1 className="display-4">Favorites</h1>
                 <Favorites favorites={this.props.favorites} removeFavorite={this.props.removeFavorite} />
             </div>
         )

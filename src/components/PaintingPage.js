@@ -19,18 +19,23 @@ class PaintingPage extends Component {
 
         return ( 
 
-            <div> 
-                <h2>{this.props.painting.title}</h2>
-                <img key={this.props.painting.primaryimageurl} src={this.props.painting.primaryimageurl} alt="painting" width="300"/>
-                <h4>Artist: {this.props.painting.people? this.props.painting.people[0].name : null}</h4>
-                <h4>Century: {this.props.painting.century}</h4>
-                <h4>Culture: {this.props.painting.culture}</h4>
-                <h3>Physical Description</h3>
-                <h4>Medium: {this.props.painting.medium}</h4>
-                <h4>Dimensions: {this.props.painting.dimensions}</h4>
-                <button onClick={this.props.history.goBack}>Go Back</button>
-                <p><button onClick={() => this.props.addFavorite(this.props.painting)}>Add to Favorites</button></p>
+            <div className="container" align="center"> 
+
+            <div className="card" style={{width: 500}}> 
+                <div className="card-body">
+                <h2 className="card-title">{this.props.painting.title}</h2>
+                <img className="card-img-top"key={this.props.painting.primaryimageurl} src={this.props.painting.primaryimageurl} alt="painting" width="300"/>
+                <h4 className="card-text">Artist: {this.props.painting.people? this.props.painting.people[0].name : null}</h4>
+                <h4 className="card-text">Century: {this.props.painting.century}</h4>
+                <h4 className="card-text">Culture: {this.props.painting.culture}</h4>
+                <h3 className="card-text">Physical Description</h3>
+                <h4 className="card-text">Medium: {this.props.painting.medium}</h4>
+                <h4 className="card-text">Dimensions: {this.props.painting.dimensions}</h4>
+                <p><button className="btn btn-secondary" onClick={() => this.props.addFavorite(this.props.painting)}>Add to Favorites</button></p>
+                <button className="btn btn-primary" onClick={this.props.history.goBack}>Go Back</button>
+                </div>
             </div>
+            </div>  
         )
     }
 }
