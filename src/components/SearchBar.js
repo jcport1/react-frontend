@@ -32,7 +32,7 @@ class SearchBar extends Component {
                 <nav className="navbar navbar-light bg-light">
                     <form className="form-inline" onSubmit={this.handleSubmit}>
                     <label className="navbar-brand">Search: </label>
-                    <input class="form-control mr-sm-2" type="text" onChange={this.handleOnChange} value={this.state.query}/>
+                    <input className="form-control mr-sm-2" type="text" onChange={this.handleOnChange} value={this.state.query}/>
                     <input className="btn btn-outline-success my-2 my-sm-0" type="submit"/>
                     </form>
                 </nav>

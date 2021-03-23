@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { fetchPaintings } from './actions/paintingActions'
 import NavBar from "./components/NavBar"
+import About from "./components/About"
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/paintings/:id" component={PaintingPage}/>
           <Route path="/paintings" component={PaintingsContainer} />
           <Route path="/favorites" component={FavoritesContainer}/>
+          <Route path="/about" component={About}/>
           <Route path="/" component={Home}/>
         </Switch>
       </div>

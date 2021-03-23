@@ -10,6 +10,7 @@ class FavoritesContainer extends Component {
         this.props.fetchFavorites()
     }
 
+
     render(){  
  
         return (
