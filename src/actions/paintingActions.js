@@ -80,6 +80,7 @@ export const addFavorite = (painting) => {
                 type:"ADD_FAVORITE", payload: savedPainting
             })
         })
+        alert("Added to favorites!")
     }
 }
 
