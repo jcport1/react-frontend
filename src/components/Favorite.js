@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom'
 
 const Favorite = (props) => { 
 
+    
+
     return ( 
         
         <div className="col-sm-4">
-            <div className="card" style={{width: 324}}> 
+            <div key={props.favorite.id} className="card" style={{width: 324}}> 
                 <h2 className="card-title"><b>{props.favorite.title}</b></h2>
                 <img className="card-img" key={props.favorite.image} src={props.favorite.image} alt="favorite" width="300"/>
                 <h4 className="card-text">{props.favorite.artist? props.favorite.artist : null }</h4><br></br>
