@@ -6,9 +6,9 @@ import { fetchFavorites, removeFavorite } from '../actions/paintingActions'
 
 class FavoritesContainer extends Component {
 
-    componentDidMount(){
-        this.props.fetchFavorites()
-    }
+    // componentDidMount(){
+    //     this.props.fetchFavorites()
+    // }
 
 
     render(){  
@@ -33,7 +33,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 
     return {
-        fetchFavorites: () => dispatch(fetchFavorites()),
         removeFavorite: (id) => dispatch(removeFavorite(id))
     }
 }

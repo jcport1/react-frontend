@@ -14,6 +14,14 @@ class PaintingPage extends Component {
          this.props.unsetPainting()
      }
 
+     isInFavorites(){
+ 
+ 
+        return !!this.props.favorites.find(painting => painting.id === parseInt(this.props.match.params.id))
+        
+
+    }
+
 
     render(){ 
 
@@ -31,7 +39,7 @@ class PaintingPage extends Component {
                 <h3 className="card-text">Physical Description</h3>
                 <h4 className="card-text">Medium: {this.props.painting.medium}</h4>
                 <h4 className="card-text">Dimensions: {this.props.painting.dimensions}</h4>
-                <p><button className="btn btn-primary" onClick={() => this.props.addFavorite(this.props.painting)}>Add to Favorites</button></p>
+                {!this.isInFavorites() && <p><button className="btn btn-primary" onClick={() => this.props.addFavorite(this.props.painting)}>Add to Favorites</button></p>}
                 <button className="btn btn-secondary" onClick={this.props.history.goBack}>Go Back</button>
                 </div>
             </div>
@@ -41,9 +49,10 @@ class PaintingPage extends Component {
 }
 
 const mapStateToProps = (state) => {
- 
+
     return {
-        painting: state.paintings.selectedPainting
+        painting: state.paintings.selectedPainting,
+        favorites: state.favorites.favorites  
     }
 
 }

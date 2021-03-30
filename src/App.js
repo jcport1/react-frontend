@@ -6,7 +6,7 @@ import FavoritesContainer from './containers/FavoritesContainer';
 import Home from './components/Home'
 import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
-import { fetchPaintings } from './actions/paintingActions'
+import { fetchPaintings, fetchFavorites } from './actions/paintingActions'
 import NavBar from "./components/NavBar"
 import About from "./components/About"
 
@@ -14,7 +14,8 @@ import About from "./components/About"
 class App extends Component {
 
   componentDidMount(){ 
-    this.props.fetchPaintings() 
+    this.props.fetchPaintings()
+    this.props.fetchFavorites()
   } 
 
   render() {
@@ -39,7 +40,9 @@ class App extends Component {
 const mapDispatchToProps = (dispatch) => {
 
   return {  
-      fetchPaintings: () => dispatch(fetchPaintings())}
+      fetchPaintings: () => dispatch(fetchPaintings()),
+      fetchFavorites: () => dispatch(fetchFavorites())
+    }
 }
 
 export default connect(null, mapDispatchToProps)(App);

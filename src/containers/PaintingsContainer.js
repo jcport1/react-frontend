@@ -5,18 +5,14 @@ import { connect } from 'react-redux'
 
 class PaintingsContainer extends Component {
 
-        // isInFavorites(){
-
-    //     return !!this.props.favorites.find(painting => painting.id === this.props.favorite.id)
-
-    // }
+       
 
     render() { 
          
         return (
             <div>
                     <SearchBar />
-                    <Paintings paintings={this.props.paintings}/>
+                    <Paintings paintings={this.props.paintings} isInFavorites={this.isInFavorites}/>
             </div>
         )
     }
