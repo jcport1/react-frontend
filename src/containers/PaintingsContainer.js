@@ -5,6 +5,26 @@ import { connect } from 'react-redux'
 
 class PaintingsContainer extends Component {
 
+
+    sortPaintings = () => {
+
+       let alphaPaintings =  this.props.paintings.sort(function(a, b) {
+            let nameA = a.title.toUpperCase()
+            let nameB = b.title.toUpperCase()
+            if (nameA < nameB){
+                return -1
+            }
+            if (nameA > nameB){
+                return 1
+            }
+            return 0 
+        })
+
+        this.setState({
+            paintings: alphaPaintings
+        })
+    }
+
        
 
     render() { 
@@ -12,6 +32,7 @@ class PaintingsContainer extends Component {
         return (
             <div>
                     <SearchBar />
+                    <p><button onClick={() => this.sortPaintings()} className="btn btn-primary">Sort</button></p>
                     <Paintings paintings={this.props.paintings} isInFavorites={this.isInFavorites}/>
             </div>
         )

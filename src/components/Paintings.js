@@ -13,7 +13,6 @@ const Paintings = (props) => {
             <div className="row">
               {paintings}
             </div>
-       
    )
 }
 
