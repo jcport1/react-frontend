@@ -1,11 +1,12 @@
-# React Application: Art Explorer
+# Art Explorer Frontend
 
-A virtual art gallery application that allows user to search for and browse an extensive collection of paintings pulled from a third-party API.
+A virtual art gallery application that allows the user to search for and browse an extensive collection of paintings from a celebrated art museum.
 
 ## Features 
 
 * Search for paintings within Harvard's Art Museum paintings collection
 * Browse individual paintings and view attributes such as artist, physical description, culture, century, etc. 
+* Client-side routing 
 * Add/Remove favorited paintings from the frontend site and backend database 
 
 ### Built With 
@@ -14,6 +15,7 @@ A virtual art gallery application that allows user to search for and browse an e
 * [Rails API backend](https://github.com/jcport1/react-backend)
 * Third-Party API: Harvard Art Museum API "https://harvardartmuseums.org/collections/api.  
 * Javascript
+* Boostrap CDN
 * CSS/HTML
 * PostgreSQL database
 
@@ -24,8 +26,8 @@ A virtual art gallery application that allows user to search for and browse an e
 Frontend 
 * Clone this repository
 * CD into the directory housing the cloned repository 
-* Run $npm install && npm start (which will install all required dependancies)
-* Open the app in your browser
+* Run $npm install && npm start (which will install all required dependancies and launch a local development server)
+* View the app in your browser
 
 Backend 
 * Clone [Rails API backend](https://github.com/jcport1/react-backend):
