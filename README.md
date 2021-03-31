@@ -30,7 +30,7 @@ Frontend
 * View the app in your browser
 
 Backend 
-* Clone [Rails API backend repository](https://github.com/jcport1/react-backend)
+* Clone [Rails backend API repository](https://github.com/jcport1/react-backend)
 * CD into the directory housing the cloned repository 
 * Run bundle install
 * Run rails db:migrate
