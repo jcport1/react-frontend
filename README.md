@@ -1,6 +1,3 @@
-# README
-Rails API backend can be found here: https://github.com/jcport1/react-backend.
-
 # Art Explorer React Application
 
 A virtual art gallery experience that allows user to search for and browse an extensive collection of paintings. The paintings in the application are pulled from a third-party API.
