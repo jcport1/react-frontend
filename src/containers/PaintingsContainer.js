@@ -5,6 +5,33 @@ import { connect } from 'react-redux'
 
 class PaintingsContainer extends Component {
 
+   
+    addLikes = (id) => {
+        debugger 
+
+        const painting = this.props.paintings.find((p) => id === p.id)
+
+        const configObj = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({likes: painting.likes + 1})
+        }
+        fetch(`http://localhost:3000/paintings/${id}`, configObj)
+        .then(res => res.json())
+        .then(json => {
+            this.setState((prevState) => {
+                const idx = prevState.paintings.findIndex((p) => json.id = p.id)
+                return {
+                    paintings: [...prevState.paintings.slice(0, idx), json, ...prevState.paintings.slice(idx + 1)]
+                }
+            })
+        })
+           
+    }
+
 
     sortPaintings = () => {
 
@@ -33,7 +60,7 @@ class PaintingsContainer extends Component {
             <div>
                     <SearchBar />
                     <p><button onClick={() => this.sortPaintings()} className="btn btn-primary">Sort</button></p>
-                    <Paintings paintings={this.props.paintings} isInFavorites={this.isInFavorites}/>
+                    <Paintings paintings={this.props.paintings} isInFavorites={this.isInFavorites} addLike = {this.addLikes}/>
             </div>
         )
     }

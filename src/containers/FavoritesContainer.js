@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Favorites from '../components/Favorites'
 import { connect } from 'react-redux'
-import { fetchFavorites, removeFavorite } from '../actions/paintingActions'
+import { removeFavorite } from '../actions/paintingActions'
 
 
 class FavoritesContainer extends Component {
