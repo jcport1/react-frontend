@@ -12,8 +12,8 @@ A virtual art gallery application that allows the user to search for and browse 
 ### Built With 
 
 * React/Redux
-* [Rails API backend](https://github.com/jcport1/react-backend)
-* Third-Party API: Harvard Art Museum API "https://harvardartmuseums.org/collections/api.  
+* Rails API backend:https://github.com/jcport1/react-backend
+* Third-Party API: Harvard Art Museum API, "https://harvardartmuseums.org/collections/api 
 * Javascript
 * Boostrap CDN
 * CSS/HTML
@@ -30,7 +30,7 @@ Frontend
 * View the app in your browser
 
 Backend 
-* Clone [Rails API backend](https://github.com/jcport1/react-backend):
+* Clone Rails API backend repository: (https://github.com/jcport1/react-backend):
 * CD into the directory housing the cloned repository 
 * Run bundle install
 * Run rails db:migrate
