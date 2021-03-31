@@ -10,7 +10,7 @@ class PaintingsContainer extends Component {
     }
 
     handleSearch = (e) => {
-        debugger
+        
         this.setState({
             filteredSearch: e.target.value
         })
