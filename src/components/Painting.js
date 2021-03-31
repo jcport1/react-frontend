@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Painting = (props) => { 
  
+    //Another way to implement a like button: 
+    //state = { count: 0}
+    //this could be made into a state component and we could add a count feature that increase whenever we like the card
 
     return ( 
 

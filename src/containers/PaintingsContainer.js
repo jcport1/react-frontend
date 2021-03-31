@@ -5,10 +5,25 @@ import { connect } from 'react-redux'
 
 class PaintingsContainer extends Component {
 
+    state = {
+        filteredSearch: ""
+    }
+
+    handleSearch = (e) => {
+        this.setState({
+            filteredSearch: e.target.value
+        })
+    }
+
+    filteredPaintings = () => {
+        return this.props.paintings.filter(painting => {
+            return painting.title.toLowerCase().includes(this.state.filteredSearch.toLowerCase())
+        })
+    }
+
    
     addLikes = (id) => {
-        debugger 
-
+         
         const painting = this.props.paintings.find((p) => id === p.id)
 
         const configObj = {
@@ -60,7 +75,8 @@ class PaintingsContainer extends Component {
             <div>
                     <SearchBar />
                     <p><button onClick={() => this.sortPaintings()} className="btn btn-primary">Sort</button></p>
-                    <Paintings paintings={this.props.paintings} isInFavorites={this.isInFavorites} addLike = {this.addLikes}/>
+                    <input label="Filter Paintings:" placeholder="Enter painting name" onChange={this.handleSearch}/>
+                    <Paintings paintings={this.filteredPaintings()} isInFavorites={this.isInFavorites} addLike = {this.addLikes}/>
             </div>
         )
     }
