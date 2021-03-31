@@ -6,28 +6,28 @@ A virtual art gallery experience that allows user to search for and browse an ex
 
 * Search for paintings within Harvard's Art Museum paintings collection
 * Browse individual paintings and view attributes such as artist, physical description, culture, century, etc. 
-* Add/Remove favorited paintings from frontend site/backend database 
+* Add/Remove favorited paintings from the frontend site and backend database 
 
 ### Built With 
 
-* React/Redux frontend
+* React/Redux
 * [Rails API backend](https://github.com/jcport1/react-backend)
-* Third-Party API -> Harvard Art Museum API: "https://harvardartmuseums.org/collections/api.  
+* Third-Party API: Harvard Art Museum API "https://harvardartmuseums.org/collections/api.  
 * Javascript
 * CSS/HTML
 * PostgreSQL database
 
 ## Get Started
 
-Install:
+# Install:
 
-# Frontend 
+Frontend 
 * Clone this repository
 * CD into the directory housing the cloned repository 
 * Run $npm install && npm start (which will install all required dependancies)
 * Open the app in your browser
 
-# Backend 
+Backend 
 * Clone [Rails API backend](https://github.com/jcport1/react-backend):
 * CD into the directory housing the cloned repository 
 * Run bundle install
