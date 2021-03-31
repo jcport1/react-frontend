@@ -1,4 +1,4 @@
-# Art Explorer React Application
+# React Application: Art Explorer
 
 A virtual art gallery application that allows user to search for and browse an extensive collection of paintings pulled from a third-party API.
 
