@@ -10,6 +10,7 @@ class PaintingsContainer extends Component {
     }
 
     handleSearch = (e) => {
+        debugger
         this.setState({
             filteredSearch: e.target.value
         })
@@ -70,7 +71,7 @@ class PaintingsContainer extends Component {
        
 
     render() { 
-         
+ 
         return (
             <div>
                     <SearchBar />
