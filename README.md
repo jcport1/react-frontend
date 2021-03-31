@@ -4,7 +4,7 @@ A virtual art gallery application that allows the user to search for and browse 
 
 ## Features 
 
-* Search for paintings within Harvard's Art Museum paintings collection
+* Search for paintings within Harvard Art Museum's paintings collection
 * Browse individual paintings and view attributes such as artist, physical description, culture, century, etc. 
 * Client-side routing 
 * Add/Remove favorited paintings from the frontend site and backend database 
