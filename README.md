@@ -1,6 +1,6 @@
 # Art Explorer React Application
 
-A virtual art gallery experience that allows user to search for and browse an extensive collection of paintings. The paintings in the application are pulled from a third-party API.
+A virtual art gallery application that allows user to search for and browse an extensive collection of paintings pulled from a third-party API.
 
 ## Features 
 
