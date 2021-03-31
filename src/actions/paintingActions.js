@@ -6,9 +6,11 @@ const url = "http://localhost:3000/paintings_index/"
 export const fetchPaintings = () => { 
     return (dispatch) => {
         dispatch({type: "START_ADDING_PAINTINGS_REQUEST"})
+       
         fetch(url)
         .then(res => res.json())
-        .then(paintings => {  
+        .then(paintings => { 
+            
             dispatch({
                 type: "GOT_PAINTINGS",
                 payload: paintings["records"]
@@ -86,9 +88,11 @@ export const addFavorite = (painting) => {
 
 export const fetchFavorites = () => { 
     return (dispatch) => {
+        
         fetch("http://localhost:3000/paintings")
         .then(res => res.json())
-        .then(favorites => {  
+        .then(favorites => {
+             
             dispatch({
                 type: "GOT_FAVORITES",
                 payload: favorites 

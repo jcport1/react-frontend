@@ -14,8 +14,11 @@ import About from "./components/About"
 class App extends Component {
 
   componentDidMount(){ 
+ 
     this.props.fetchPaintings()
+   
     this.props.fetchFavorites()
+  
   } 
 
   render() {

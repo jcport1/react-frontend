@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 class PaintingsContainer extends Component {
 
        
-
     render() { 
          
         return (
