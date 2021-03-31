@@ -17,9 +17,9 @@ A virtual art gallery experience that allows user to search for and browse an ex
 * CSS/HTML
 * PostgreSQL database
 
-## Get Started
+# Get Started
 
-# Install:
+## Install:
 
 Frontend 
 * Clone this repository
