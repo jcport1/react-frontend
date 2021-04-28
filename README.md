@@ -15,7 +15,7 @@ A virtual art gallery application that allows the user to search for and browse 
 * [Rails API backend](https://github.com/jcport1/react-backend)
 * Third-Party API: [Harvard Art Museum API](https://harvardartmuseums.org/collections/api)
 * Javascript
-* Bootsrap CDN
+* Bootstrap CDN
 * CSS/HTML
 * PostgreSQL database
 
