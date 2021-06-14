@@ -6,11 +6,6 @@ import { removeFavorite } from '../actions/paintingActions'
 
 class FavoritesContainer extends Component {
 
-    // componentDidMount(){
-    //     this.props.fetchFavorites()
-    // }
-
-
     render(){  
  
         return (

@@ -3,12 +3,12 @@ import React, { Component } from 'react'
 import PaintingPage from './components/PaintingPage';
 import PaintingsContainer from './containers/PaintingsContainer';
 import FavoritesContainer from './containers/FavoritesContainer';
-import Home from './components/Home'
-import { connect } from 'react-redux';
+import Home from './components/Home';
+import NavBar from "./components/NavBar";
+import About from "./components/About";
+import { fetchPaintings, fetchFavorites } from './actions/paintingActions';
 import { Switch, Route } from 'react-router-dom';
-import { fetchPaintings, fetchFavorites } from './actions/paintingActions'
-import NavBar from "./components/NavBar"
-import About from "./components/About"
+import { connect } from 'react-redux';
 
 
 class App extends Component {
@@ -16,13 +16,11 @@ class App extends Component {
   componentDidMount(){ 
  
     this.props.fetchPaintings()
-   
     this.props.fetchFavorites()
   
   } 
 
   render() {
-      console.log(this.state)
       return (
         <div className="App">
         <NavBar />
