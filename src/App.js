@@ -1,11 +1,11 @@
-import './App.css';
-import React, { Component } from 'react'
-import PaintingPage from './components/PaintingPage';
-import PaintingsContainer from './containers/PaintingsContainer';
-import FavoritesContainer from './containers/FavoritesContainer';
+import React, { Component } from 'react';
+import './index.css';
 import Home from './components/Home';
 import NavBar from "./components/NavBar";
 import About from "./components/About";
+import PaintingPage from './components/PaintingPage';
+import PaintingsContainer from './containers/PaintingsContainer';
+import FavoritesContainer from './containers/FavoritesContainer';
 import { fetchPaintings, fetchFavorites } from './actions/paintingActions';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
